@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragmentMain">
+
+    <fragment
+        android:id="@+id/fragmentMain"
+        android:name="com.monkey.game.ui.first.FragmentFirst"
+        android:label="FragmentMain" >
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentMonkeyGame"
+            app:destination="@id/fragmentMonkeyGame" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentMonkeyGame"
+        android:name="com.monkey.game.ui.monkey_game.FragmentMonkeyGame"
+        android:label="FragmentMonkeyGame" >
+        <action
+            android:id="@+id/action_fragmentMonkeyGame_to_dialogGameEnding"
+            app:destination="@id/dialogGameEnding" />
+    </fragment>
+    <dialog
+        android:id="@+id/dialogGameEnding"
+        android:name="com.monkey.game.ui.dialogs.DialogGameEnding"
+        android:label="DialogGameEnding" >
+        <argument
+            android:name="scores"
+            app:argType="integer" />
+    </dialog>
+</navigation>
